@@ -22,7 +22,7 @@ def mask_track(request):
         r = requests.get(url)
 
         status = r.status_code
-        is_mask_available = KEYWORDS_FOR_TRIGGER not in r.text
+        is_mask_available = KEYWORDS_FOR_TRIGGER in r.text
         print(f"[mask_track] status: {status}, is_mask_available: {is_mask_available}, url: {url}")
 
         if status == 200 and is_mask_available:
